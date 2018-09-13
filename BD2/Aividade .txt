@@ -1,0 +1,35 @@
+1)
+CREATE TABLE Departamento(
+NumId VARCHAR(10) PRIMARY KEY
+Nome VARCHAR(10) 
+);
+
+CREATE TABLE Empregado (
+RG VARCHAR(10) PRIMARY KEY,
+Endereco VARCHAR(10),
+Nome VARCHAR(10),
+Salario DOUBLE(10)
+FOREIGN KEY(NumId) REFERENCES Departamento(NumId)
+);
+
+CREATE TABLE Dependente(
+IdDependente VARCHAR (10) PRIMARY KEY
+Nome VARCHAR (10)
+DataNasc DATE 
+Parentesco VARCHAR (10) 
+)
+
+ALTER TABLE Departamento ADD FOREIGN KEY(RG) REFERENCES Empregado (RG);
+ALTER TABLE Dependente ADD FOREIGN KEY(RG) REFERENCES Empregado (RG);
+
+------------------------------------------------------------------------------
+
+2)
+SELECT Empregado.Nome
+FROM Empregado, Departamento
+WHERE Departamento.Nome = "Computacao" AND  Departamento.RG = Empregado.RG;
+
+
+
+
+

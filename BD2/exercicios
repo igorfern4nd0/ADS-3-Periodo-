@@ -1,0 +1,6 @@
+-- Exercicio 1)
+SELECT NumId, Nome
+FROM Projeto
+WHERE Localizacao Like 'K%' or Localizacao like 'P%';
+
+-- Exercicio 2)

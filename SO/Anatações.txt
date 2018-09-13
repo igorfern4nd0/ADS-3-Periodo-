@@ -1,0 +1,25 @@
+Compõe Sistema computacional:
+Processadores, memoria principal, Dispositivos de entrada & saida, interligados por barramentos
+
+Processador:
+Funções: 
+	porocessamento:
+		Operações matematicas, movimentação de dados, desvios de dados, operações de entrada e saida.
+
+	controle: 
+
+Barramentos:
+processador memoria -> mais rapidos 
+
+barramento entrada e saida, mais lento porem muitplas conexões bus adpter  
+
+barramento backplane rapido (alto desempenho) porem não permite varias conexões
+
+Pipelining
+
+ 
+
+
+
+tipos de sistemas operacionais
+

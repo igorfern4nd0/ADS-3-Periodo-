@@ -1,0 +1,9 @@
+2) A necessidade da criação de sistemas multitarefas foi dada devido ao desperdicio de tempo e processamento que sistemas monoprogramaveis traziam ao processar uma tarefa por vez.
+
+3) São desvios forçados das instruções / execuções de um programa ocasionados por algum fator, podendo ser de Interrupção de hardware, Exceção, Interrupção de software. 
+
+4) O sistema ao identificar uma interrupção inicia uma rotina de tratamento onde o objetivo é salvar o estado do processamento para que posteriormente possa retornar de onde parou.
+
+5) Em um evento sincrono, caracteristico de excessões e interrupções de software, o programa se prepara para a interrupção, podendo garantir a rotina e posteriormente o retorno dos processos em execução, é um resultado direto da execução do programa concorrente; Já em eventos assincronos, o programa independe de dados de entrada e de instruções de outros programas, por se tratar de uma interrupção de hardware.
+
+6) 

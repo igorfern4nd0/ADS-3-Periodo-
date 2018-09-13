@@ -1,0 +1,28 @@
+5) garantir a integridade de todos os componentes do sistema em relação a possiveis problemas / má utilização dos recursos.
+
+6) modo kernel e modo usuario.
+
+6.1) como é realizada uma chamada a rotina de sistema?
+questão de prova, desenhada**
+
+7)um erro em um modulo afeta todos os modulos linkados a ele. 
+ainda é utilizada por ser mais facil de ser implementada em relação a arquitetura microkernel.
+
+8) Desvantagem, desempenho pois a troca de permissões constante acarreta em engasgos desnecessarios no sistema.
+Vantagem, privilegios bem definidos e sucintos, sendo bem encapsulado.
+
+9) dois ou mais sistemas operacionais compartilhando do mesmo hardware, ou até mesmo um sistema operacional "rodando" sobre o outro.
+vantagem acoplamento de sistema, independencia entre os sistemas
+desvantagem desempenho por compartilhar o hardware
+
+10) usuario solicita recurso, por uma msg, mensagem chega em modo usuario, servidor intermedia essa mensagem trasformando-a em uma solicitação modo kernel que à aplica e retorna para o servidor que responde para o cliente novamente em modo usuario. 
+Desvantagem implementação dificil, e problema em mudança constante dos modos de acesso.
+
+
+
+
+
+
+
+
+

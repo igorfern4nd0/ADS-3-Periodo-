@@ -1,0 +1,48 @@
+Sistema batch: fita e instrução, cartões perfurados, gravado em uma fita de entrada lida processada e retorna uma fita de saida, que é processada e gera um relatorio.
+
+fortemente acoplado: varios proc compartilhando uma memoria principal, com um sistema
+
+fracamente dois ou mais sistemas conectados por um link, podendo ser redes distribuidas ou barramentos.
+
+multiplos proc fividos em fracamente ou fortemente   
+
+sistema de tempo real: resposta imediata
+
+sistema de tempo compartilhado: todos os processos serão executados ao menos uma vez pois cada um tem um tempo determinado para ser processado.
+
+hardware: processador memoria e entrada e saida
+
+registradore da memoria: mar registrador de endereço, mbr: registrador de dados na memoria.
+
+memoria RAM: memoria volatil, dados somente com energia
+
+memroia rom: quase permanente
+
+Cache: armazenar dados q serão utilizados em breve
+
+diferença entre secundaria e principal: memoria principal ram e rom, a secundaria...
+
+*tipos de barramento: processador memoriia, entrada e saida, e back plaine
+
+entrada e saida: podem ser conectados por outros barramentos, ponte "bridge" **
+
+back plaine tem um adaptador unico, alto desempenho
+
+pipe line: pc entende linguagem de maquina
+
+tradutor, é divido em montador e compilador, tradutor compila todo o codigo, e transforma esse codigo em modulo objetos, interpretador compila instruções
+
+linker: transforma os modulos objetos em executaveis, no loader existe realocado e absoluto, um não tem endereço especifico outro sim
+
+depurador: acompanha linha a linha oq o codigo faz
+
+interpretador e comandos Shell
+
+boot e shutdown.
+
+
+
+
+
+
+

@@ -1,0 +1,11 @@
+sudo su - postgres
+psql -d postgres -U postgres
+\q 
+exit
+
+~/pgadmin4/pgadmin4
+------------------------------
+
+sudo service postgresql start
+pgadmin3
+.

@@ -1,0 +1,58 @@
+Copiar exercicios de matriz dinamica
+com os dois tipos de inicialização 
+
+vetor dinamico 
+
+Matriz dinamica: matriz=(int *) malloc (sizeof(int)*linha*coluna);
+
+para andar [qtdColuna*linha*coluna]
+
+
+
+ou matriz=(matriz *)malloc(sizeof(matriz)*coluna);
+	for(i=0; i<n; i++){
+		matriz[i]=malloc(sizeof(matriz));
+
+	} // anda com for normal
+
+------------------------------------------------
+
+typedef struct{
+	int info;
+	struct Lista * prox;
+}Lista;
+
+Lista * inserirNoInicio(Lista * lista, int valor){
+	Lista * novo;
+	novo = (Lista *) malloc (sizeof(Lista));
+	novo -> prox = l;
+	novo -> info = v;
+
+	return novo;
+}
+
+no main: 
+
+Lista * l1 = null;
+l1 = inserir()
+...
+
+Lista * inserirFim (Lista * lista, int valor){
+	Lista * novo, * aux; 
+	novo = (Lista *)malloc(sizeof(lista));
+	if(lista == null){
+		return novo;
+	}
+	while(aux->prox != null){
+		aux = aux -> prox;
+	}
+	novo -> info = v;
+	aux -> prox = novo;
+	novo -> prox = null;
+	return l;
+}
+--------------------
+
+
+
+

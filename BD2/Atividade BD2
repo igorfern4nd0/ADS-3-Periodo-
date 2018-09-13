@@ -1,0 +1,31 @@
+-- 1)
+SELECT Empregado.Nome 
+FROM Empregado JOIN Dependente ON (RG = RGResp)
+WHERE Dependente.Parentesco = 'Mãe'
+EXCEPT
+SELECT Empregado.Nome
+FROM Empregado JOIN Dependente ON (RG = RGResp)
+WHERE Dependente.Parentesco = 'Filho'
+;
+
+-- 2)
+SELECT Empregado.Nome
+FROM Projeto, Empregado_Projeto JOIN Empregado ON (RGEmp = RG) 
+WHERE ((NumIdProj = Projeto.NumId) AND Projeto.Nome = 'Controle de Falhas')
+INTERSECT
+SELECT Empregado.Nome
+FROM Projeto, Empregado_Projeto JOIN Empregado ON (RGEmp = RG) 
+WHERE ((NumIdProj = Projeto.NumId) AND Projeto.Nome = 'Banco de Dados')
+;
+
+-- 3) Incompleto
+ELECT Departamento.Nome, Avg (Empregado.Salario) as MediaSalario
+FROM Departamento JOIN Empregado ON 
+DepLotacao = Numid 
+INTERSECT
+SELECT Departamento.Nome, Avg (Empregado.Salario) as MediaSalario
+FROM Departamento JOIN Empregado ON (DepLotacao = Numid )
+
+
+;
+

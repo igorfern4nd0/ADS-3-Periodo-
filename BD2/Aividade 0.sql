@@ -1,0 +1,6 @@
+CREATE TABLE Empregado (
+RG VARCHAR(10) PRIMARY KEY,
+Endereco VARCHAR(10),
+Nome VARCHAR(10),
+Salario DOUBLE(10)
+)
