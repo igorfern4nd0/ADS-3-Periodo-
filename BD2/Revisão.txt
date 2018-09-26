@@ -1,0 +1,68 @@
+estudar union 
+fazer lista 5 
+fazer um exercicio que represente cada lista
+fazer alguns exercicios de view 
+estudar sub consulta
+estudar operadores matematicos
+estudar função
+
+usar grup by, quando houver "...de seus atributo..."
+
+Lista 5)
+
+1)
+
+SELECT departamento // agrupa quais departamentos tem engenheiro
+FROM funcionario NATURAL JOIN engenheiro
+WHERE especialidade LIKE 'eletricista'
+INTERSECT // retorna apenas os departamentos que tem ambos.
+SELECT departamento // agrupa quais dep tem projetista senior
+FROM funcionario NATURAL JOIN PROJETISTA
+WHERE tipo like 'senior'
+EXCEPT // desse retorno, seleciona apenas os que não tem auxiliar bilingue
+SELCT departamento 
+FROM funcionario NATURAL JOIN auxiliar
+WHERER bilingue; // pq bilingue é um boolean
+
+2)
+
+SELECT nome, salario, departamento
+FROM funcionario JOIN projetista USING (codigo)
+WHERE tipo LIKE 'senior'
+	AND salario < // sub consulta, salario menor doq o retorno da consulta abaixo, ou seja,
+	media salarial.
+		(SELECT AVG(salario) FROM  auxiliar WHERE bilingue);
+
+3)
+
+CREATE VIEW MediaEngenheiros AS
+SELECT departamento, AVG (salario) AS MediaSalarial
+FROM funcionario JOIN engenheiro USING (codigo) 
+GROUP BY departamento
+ORDER BY MediaSalarial DESC; // primeiro os departamentos q tem a maior media salarial, depois os
+				outros
+
+SELECT departamento 
+FROM MediaEngenheiros
+WHERE MediaSalarial = (SELECT MAX (MediaSalarial) FROM Mediaengenheiros);
+
+4) 
+
+CREATE FUNCTION QuantEng (NomeDepto VARCHAR (30))
+RETURN INTEGER AS 
+$$
+BEGIN
+RETURN	(SELECT COUNT (*) FROM funcionario NATURAL JOIN engenheiro
+	WHERE departamento LIKE NomeDepto); 
+END;
+$$ LENGUEGE PLPGSQL
+
+USAR A FUNÇÃO:
+
+SELECT DISTINCT departamento, QuantEng (departamento) // distinct é como um group by no final.
+FROM funcionario; 
+
+
+
+
+

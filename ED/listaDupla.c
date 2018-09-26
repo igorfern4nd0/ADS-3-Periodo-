@@ -21,11 +21,16 @@ Lista2 * inserirIni(Lista2 * l, int v);
 
 Lista2 * inserirFim (Lista2 * l, int v);
 
+Lista2 * inserirMeio (Lista2 * l, int v);
+
 int main()
 {
 	Lista2 * l1;
-	l1 = inserirIni (l1, 6);
+	l1 = inserirIni (l1, 1);
+	l1 = inserirFim (l1, 3);
+	l1 = inserirMeio (l1, 2);
 	return 0;
+
 }
 
 Lista2 * inserirIni(Lista2 * l, int v){
@@ -38,7 +43,7 @@ Lista2 * inserirIni(Lista2 * l, int v){
 		l -> ant = novo;
 	}
 	return novo;
-
+}
 
 Lista2 * inserirFim (Lista2 * l, int v){
 	Lista2 * novo, * aux = l;
@@ -47,13 +52,36 @@ Lista2 * inserirFim (Lista2 * l, int v){
 	novo -> prox = NULL;
 	if(l == NULL){ // se a lista for vazia
 		novo -> ant = NULL; // novo elemento não tera nada antes.
-		return novo; // novo elemnto passa a ser a cabeça da lista.
+		return novo; // novo elemento passa a ser a cabeça da lista.
 	}
 	while(aux -> prox != NULL){
 		aux = aux -> prox; // anda até encontrar o fim da lista e aponta pra ele.
 	}
 	novo -> ant = aux; // anterior do novo elemento recebe o fim da lista, pois aux esta apontando pro final.
 	aux -> prox = novo; // fim da lista emenda com o novo elemento. 
+	return l;
+
+}
+
+Lista2 * inserirMeio (Lista2 * l, int v){
+	Lista2 * novo, * aux = l;
+	novo = (Lista2 * ) malloc(sizeof(Lista2));
+	novo -> info = v;
+	if(l == NULL){
+		novo -> ant = aux;
+		novo -> prox = aux;
+		return novo;
+	}
+	while(aux -> info < v){
+		aux = aux -> prox;
+	}
+	if(aux == l){
+		novo -> prox = aux;
+		aux -> ant = novo;
+		return l;
+	}
+	novo -> prox = aux;
+	aux -> ant -> prox = novo;
 	return l;
 
 }
