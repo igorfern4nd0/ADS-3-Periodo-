@@ -62,6 +62,14 @@ USAR A FUNÇÃO:
 SELECT DISTINCT departamento, QuantEng (departamento) // distinct é como um group by no final.
 FROM funcionario; 
 
+Salario medio dos empregados dos departamentos com 2 ou mais empregados:
+
+SELECT AVG (salario)
+FROM empregado
+WHERE depLotacao IN (SELECT deplotacao FROM EMPREGADO GROUP BY deplotacao 
+			HAVIN COUNT (*) >= 2);
+ //HAVIN é um where pra grupos.
+
 
 
 
